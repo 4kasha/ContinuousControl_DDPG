@@ -99,7 +99,7 @@ class Agent():
         Params
         ======
             state (array_like): current state
-            eps (float): epsilon, for epsilon-greedy action selection
+            eps (float): epsilon, for exploration action space
         
         """
         state = torch.from_numpy(state).float().to(device)

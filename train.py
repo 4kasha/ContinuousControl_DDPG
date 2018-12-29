@@ -19,7 +19,7 @@ from unityagents import UnityEnvironment
 Params
 ======
     n_episodes (int): maximum number of training episodes
-    eps_start (float): starting value of epsilon, for epsilon-greedy action selection
+    eps_start (float): starting value of epsilon, for exploration action space
     eps_end (float): minimum value of epsilon
     eps_decay (float): multiplicative factor (per episode) for decreasing epsilon
     goal_score (float): average score to be required

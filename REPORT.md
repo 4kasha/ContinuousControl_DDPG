@@ -55,7 +55,7 @@ The corresponding parameters are as follow.
 
 - hidden_layers (list): size of hidden_layers
 - use_bn (bool): use batch normalization or not
-- use_reset (=**True**): weights and bias initialization used in the [original paper][ref2] to ensure the initial outputs for the policy and value estimatesw are near zero.
+- use_reset (=**True**): weights and bias initialization used in the [original paper][ref2] to ensure the initial outputs for the policy and value estimates are near zero.
 
 1. Actor
     - 2 hidden layers with 256 and 128 nodes respectively.

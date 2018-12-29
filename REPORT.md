@@ -12,14 +12,14 @@
 Deep Deterministic Policy Gradient (DDPG) is the one of Actor-Critic algorithm which simultaneously learns an action-value function Q(s,a) and a policy. 
 In the DDPG algorithm actor plays a role in taking deterministic action following a policy and critic evaluates the action by the actor based on the TD error. 
 Two neural networks are used as function approximator of actor and critic, 
-and as same with DQN algorithm (cf. [see more details](https://github.com/4kasha/Navigation_DQN/Report.md)), the learning is performed based on **Experience replay** and **Fixed Q-Targets**. 
+and as same with DQN algorithm (cf. [see more details](https://github.com/4kasha/Navigation_DQN/blob/master/Report.md)), the learning is performed based on **Experience replay** and **Fixed Q-Targets**. 
 
-Additionally in the DQN learning action was selected such that <img src="https://latex.codecogs.com/gif.latex?a(s)=\underset{a}{\text{argmax}}Q(s,a;\theta)"/> under the epsilon-greedy selection, this is however impossible for taking continuos action and the deterministic policy case.
-Therefore for the purpose of exploring action space and obtaining useful learning signal a kind of noise is intentionally added to the output of actor. 
+Additionally in the DQN learning action was selected such that <img src="https://latex.codecogs.com/gif.latex?a(s)=\underset{a}{\text{argmax}}Q(s,a;\theta)"/> under the epsilon-greedy selection, this is however impossible for taking continuos action and the deterministic policy case.  
+Therefore for the purpose of exploring action space and obtaining useful learning signal a kind of noise is intentionally added to the output of actor.
 In the [original paper][ref2] time-correlated noise produced by [Ornstein-Uhlenbeck process][ref3] is suggested. (but recent results report that uncorrelated, zero mean Gaussian noise works well.) 
 By virtue of [Deterministic Policy Gradient Theorem][ref1] the analytical expression for policy gradient can be derived, then the pseudocode for DDPG algorithm is as follows.
 
-<img src="./media/algorithm.png" width="500" label="compare">
+<img src="./media/algorithm.png" width="600" label="compare">
 
 ## Hyperparameters
 
@@ -71,7 +71,7 @@ The corresponding parameters are as follow.
 
 ## Plot of Rewards
 
-A reward of +0.1 is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
+A reward of +0.1 is provided for each step that the agent's hand is in the goal location. 
 
 - **_Version 1: One (1) Agent_**
 
@@ -110,5 +110,5 @@ The following videos are a behaviour of random agents and trained agents with DD
 [ref1]: http://proceedings.mlr.press/v32/silver14.pdf
 [ref1-2]:http://proceedings.mlr.press/v32/silver14-supp.pdf
 [ref2]: https://arxiv.org/abs/1509.02971
-[ref3]: ttps://math.stackexchange.com/questions/1287634/implementing-ornstein-uhlenbeck-in-matlab
+[ref3]: https://math.stackexchange.com/questions/1287634/implementing-ornstein-uhlenbeck-in-matlab
 [ref4]: https://spinningup.openai.com/en/latest/algorithms/ddpg.html

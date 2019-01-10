@@ -14,7 +14,7 @@ In the DDPG algorithm actor plays a role in taking deterministic action followin
 Two neural networks are used as function approximator of actor and critic, 
 and as same with DQN algorithm (cf. [see more details](https://github.com/4kasha/Navigation_DQN/blob/master/Report.md)), the learning is performed based on **Experience replay** and **Fixed Q-Targets**. 
 
-Additionally in the DQN learning action was selected such that <img src="https://latex.codecogs.com/gif.latex?a(s)=\underset{a}{\text{argmax}}Q(s,a;\theta)"/> under the epsilon-greedy selection, this is however impossible for taking continuos action and the deterministic policy case.  
+Additionally in the DQN learning action is selected such that <img src="https://latex.codecogs.com/gif.latex?a(s)=\underset{a}{\text{argmax}}Q(s,a;\theta)"/> under the epsilon-greedy selection, this is however impossible for taking continuos action and the deterministic policy case.  
 Therefore for the purpose of exploring action space and obtaining useful learning signal a kind of noise is intentionally added to the output of actor.
 In the [original paper][ref2] time-correlated noise produced by [Ornstein-Uhlenbeck process][ref3] is suggested. (but recent results report that uncorrelated, zero mean Gaussian noise works well.) 
 By virtue of [Deterministic Policy Gradient Theorem][ref1] the analytical expression for policy gradient can be derived, then the pseudocode for DDPG algorithm is as follows.
@@ -84,7 +84,7 @@ A reward of +0.1 is provided for each step that the agent's hand is in the goal 
 In this report, the results of learning with/without batch normalization using 20 agents (Version 2) are illustrated in the below figure. 
 The number of episodes needed to solve this environment is **37 episodes**. 
 This number is however prone to highly depend on the random seed (see. [CC_Results_Example.ipynb](CC_Results_Example.ipynb)).
-The batch normalization, which is the normalization across the minibatch of states to have unit mean and variance, leads the efficiency in the training. As is mentioned in the [original paper][ref2], states vector of the environment in general include various kinds of physical quantities (such as position, velocity) and these have differnt scales. In the trainning without batch normalization this causes the inefficiencies of the learnng.
+The batch normalization, which is the normalization across the minibatch of states to have unit mean and variance, leads to the efficiency in the training. As is mentioned in the [original paper][ref2], states vector of the environment in general include various kinds of physical quantities (such as position, velocity) and these have differnt scales. In the trainning without batch normalization this causes the inefficiencies of the learnng.
 
 <img src="./media/DDPG_bn.png" width="420" label="compare">
 

@@ -97,7 +97,7 @@ The following videos are a behaviour of random agents and trained agents with DD
 
 ### Plan to implement the following algorithms
 
-- [PPO](https://arxiv.org/pdf/1707.06347.pdf)
+- [PPO](https://arxiv.org/pdf/1707.06347.pdf) (cf. the [repo](https://github.com/4kasha/CartPole_PPO) for the discrete action case)
 - [A3C](https://arxiv.org/pdf/1602.01783.pdf)
 
 ## Reference
